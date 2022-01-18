@@ -1347,8 +1347,8 @@ impl<'a, S: std::hash::BuildHasher> Generator<'a, S> {
     fn visit_closure(
         &mut self,
         buf: &mut Buffer,
-        params: &[&'a str],
-        body: &Expr<'a>,
+        params: &'a [&str],
+        body: &'a Expr<'_>,
     ) -> Result<DisplayWrap, CompileError> {
         self.locals.push();
 
